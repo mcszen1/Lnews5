@@ -166,8 +166,7 @@ def salvar(nomearquivo,rotulo,word):
         u.close()
 
 print()
-n=0
-while n==0:
+while True:
     try:
         print ('ETAPA 3 - SALVANDO MATÉRIAS EM ARQUIVOS DE TEXTO')
         nomearquivo=input('Escolha um nome para o seu arquivo: ')
@@ -175,16 +174,16 @@ while n==0:
         word=input('Digite uma palavra como filtro no texto: ')
         salvar(nomearquivo,rotulo,word)
         escolha=input('Quer salvar outra busca ? Digite 1 para SIM e 2 para NÃO: ')
-        if str(escolha)==1:
-            break
-        elif str(escolha)==2:
+        if str(escolha)=="1":
+            continue
+        elif str(escolha)=="2":
             break
         else:
             print('Você não digitou uma das opções válidas (1 ou 2). Vamos de novo.')
             continue
     except ValueError:
         print ()
-          
+
 
     
 
