@@ -165,10 +165,17 @@ def salvar(nomearquivo,rotulo,word):
         f.close()
         u.close()
 
-print()
 while True:
     try:
+        print()
         print ('ETAPA 3 - SALVANDO MATÉRIAS EM ARQUIVOS DE TEXTO')
+        print()
+        print('Para essa etapa você deve entrar com 3 termos. O primeiro será o nome base do seu arquivo .')
+        print('O segundo será o filtro da editoria ou área de interesse.')
+        print('O terceiro será a palavra que você quer procurar nos textos.')
+        print ('IMPORTANTE: Se você quiser salvar todas as notícias, no termo da editoria digite http.')
+        print ('IMPORTANTE: Se você não quiser especificar uma palavra para busca digite apenas ENTER')
+        print ()
         nomearquivo=input('Escolha um nome para o seu arquivo: ')
         rotulo=input("Defina um filtro (editoria ou temática de interesse) : ")
         word=input('Digite uma palavra como filtro no texto: ')
