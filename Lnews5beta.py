@@ -6,7 +6,7 @@ Created on Tue Apr  2 14:03:34 2019
 """
 
 import newspaper
-#from newspaper import news_pool
+from newspaper import news_pool
 from newspaper import Article
 print()
 print('LNEWS - Ferramenta de extração de conteúdo')
@@ -45,8 +45,8 @@ while w==0:
         print()
         
 meio=newspaper.build(escolha, language='pt', memoize_articles=False)
-#fast=[meio]
-#news_pool.set(fast,threads_per_source=2)
+fast=[meio]
+news_pool.set(fast,threads_per_source=2)
 print()
 print ('Total de registros coletados: ' + str(meio.size()))
 listaurl=[]
@@ -76,8 +76,8 @@ for link in urlfinal:
     print (str(urlfinal.index(link)+1)+ " - "+link)
 print()
 
-z=0
-while z==0: 
+
+while True: 
 
     print()
     print ('ETAPA 2 - EXPLORE AS MATÉRIAS')
@@ -160,7 +160,7 @@ def salvar(nomearquivo,rotulo,word):
             print()
             print ('Arquivo com a lista salvo.')
         else:    
-            print ('Percentual de matérias com o termo escolhido no total : '+'{0:.4f}'.format((m-1)/qlink*100)+'%')
+            print ('Percentual de matérias com o termo escolhido no total : '+'{0:.4f}'.format((m)/qlink*100)+'%')
             print ('Arquivos com a lista e os textos salvos.')
         f.close()
         u.close()
@@ -170,7 +170,8 @@ while True:
         print()
         print ('ETAPA 3 - SALVANDO MATÉRIAS EM ARQUIVOS DE TEXTO')
         print()
-        print('Para essa etapa você deve entrar com 3 termos. O primeiro será o nome base do seu arquivo .')
+        print('Para essa etapa você deve entrar com 3 termos.')
+        print('O primeiro será o nome base do seu arquivo .')
         print('O segundo será o filtro da editoria ou área de interesse.')
         print('O terceiro será a palavra que você quer procurar nos textos.')
         print ('IMPORTANTE: Se você quiser salvar todas as notícias, no termo da editoria digite http.')
